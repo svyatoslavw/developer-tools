@@ -7,7 +7,7 @@ import { cn } from "./lib/utils"
 export default function Layout() {
   return (
     <main className="flex h-svh flex-col items-center space-y-1.5 px-10">
-      <div className="flex w-full items-center justify-center space-x-4 font-[poppins]">
+      <div className="flex w-full items-center justify-center space-x-4 py-1 font-[poppins]">
         {links.map((link) => (
           <Link
             key={link.href}
@@ -21,7 +21,7 @@ export default function Layout() {
       <div className={cn("dark w-full rounded-xl bg-secondary/50 backdrop-blur-3xl ")}>
         <Outlet />
       </div>
-      <div className="flex w-full items-center justify-center gap-2 pt-2 text-xs">
+      <div className="flex w-full items-center justify-center gap-2 pt-1 text-xs">
         <GithubIcon className="size-4" />
         <a className="cursor-pointer underline-offset-2 hover:underline">View on Github</a>
       </div>

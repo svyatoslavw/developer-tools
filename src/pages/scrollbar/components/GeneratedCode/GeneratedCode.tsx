@@ -1,7 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
-import useCopy from "use-copy"
-import { useSettings } from "../../contexts/useScrollbar"
+import { Code } from "@/components/ui/code"
+import { useSettings } from "../../../../lib/contexts/useSettings"
 import { SCROLLBAR_CODE } from "../../utils/constants/scrollbar.constant"
 
 const GeneratedCode = () => {
@@ -18,27 +16,7 @@ const GeneratedCode = () => {
     )
     .replace(/__RADIUS__/g, String(settings["Scrollbar Border Radius"]))
 
-  const [copied, copy, setCopied] = useCopy(code)
-
-  const onCopy = () => {
-    copy()
-    toast.success("Successfully copied")
-
-    setTimeout(() => {
-      setCopied(false)
-    }, 3000)
-  }
-  return (
-    <div className="grid w-[800px] place-items-start space-y-3 p-1">
-      <pre className="max-h-[540px] w-[800px] overflow-y-auto rounded-s-xl bg-neutral-800/50 p-4">
-        <code>{code}</code>
-        <style dangerouslySetInnerHTML={{ __html: code }} />
-      </pre>
-      <Button onClick={onCopy} className="w-36 bg-custom hover:bg-custom/70">
-        {copied ? "✓ Copied" : "Copy"}
-      </Button>
-    </div>
-  )
+  return <Code code={code} styled />
 }
 
 export { GeneratedCode }

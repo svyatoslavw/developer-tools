@@ -7,10 +7,10 @@ import { toast } from "sonner"
 import { z } from "zod"
 import { FormOptSchema, generateInitialOptions } from "../utils/constants/options.constant"
 import { getValuesFromLS, setValuesToLS } from "../utils/helpers/generator.helper"
-import { useJSONCode } from "./useCode"
+import { useCode } from "./useCode"
 
 const useGeneratorForm = () => {
-  const { setCode } = useJSONCode()
+  const { setCode } = useCode()
 
   const [userOptions, setUserOptions] = React.useState(
     getValuesFromLS("options") ? JSON.parse(getValuesFromLS("options")!) : {}
@@ -21,8 +21,7 @@ const useGeneratorForm = () => {
     setValuesToLS("options", JSON.stringify({ ...userOptions, [key]: value }))
   }
 
-  const generateOptions = () => {
-    console.log("@gen")
+  const generateOption = () => {
     const options: Option = { ...generateInitialOptions(), ...userOptions }
     for (const key in options) {
       if (options.hasOwnProperty(key) && options[key].toString().startsWith("faker")) {
@@ -37,42 +36,41 @@ const useGeneratorForm = () => {
     return options
   }
 
-  const options = React.useMemo(() => generateOptions(), [generateOptions])
+  const option = React.useMemo(() => generateOption(), [userOptions])
+
+  const items = (Object.keys(option) as Array<keyof typeof option>).map((key) => ({
+    id: key,
+    label: key.toString().charAt(0).toUpperCase() + key.toString().slice(1),
+    option: option[key]
+  }))
 
   const form = useForm<z.infer<typeof FormOptSchema>>({
     resolver: zodResolver(FormOptSchema),
     defaultValues: {
-      count: "1",
+      count: "",
       items: []
     }
   })
 
-  function onSubmit(data: z.infer<typeof FormOptSchema>) {
-    return new Promise<void>((resolve) => {
-      const res: Option[] = Array.from({ length: +data.count }, () => {
-        const newOptions: Option = generateOptions()
-        return data.items.reduce((acc, item) => ({ ...acc, [item.id]: newOptions[item.id] }), {})
-      })
-
+  const onSubmit = async (data: z.infer<typeof FormOptSchema>) => {
+    const res: Option[] = Array.from({ length: +data.count }, () => {
+      const newOption: Option = generateOption()
+      return data.items.reduce((acc, item) => ({ ...acc, [item.id]: newOption[item.id] }), {})
+    })
+    await new Promise<void>((resolve) => {
       setTimeout(() => {
         setCode(res)
         toast.success("Values successfully generated", { cancel: { label: "Close" } })
         resolve()
-      }, 500)
+      }, 300)
     })
   }
-
-  const items = (Object.keys(options) as Array<keyof typeof options>).map((key) => ({
-    id: key,
-    label: key.toString().charAt(0).toUpperCase() + key.toString().slice(1),
-    option: options[key]
-  }))
 
   return {
     state: {
       isLoading: form.formState.isSubmitting,
       items,
-      options
+      option
     },
     form,
     functions: { onSubmit, addCustomOption }

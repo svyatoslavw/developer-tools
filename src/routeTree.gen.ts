@@ -17,7 +17,8 @@ import { Route as rootRoute } from './routes/__root'
 // Create Virtual Routes
 
 const ScrollbarLazyImport = createFileRoute('/scrollbar')()
-const JsonGeneratorLazyImport = createFileRoute('/json-generator')()
+const JsonLazyImport = createFileRoute('/json')()
+const GridLazyImport = createFileRoute('/grid')()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
@@ -27,12 +28,15 @@ const ScrollbarLazyRoute = ScrollbarLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/scrollbar.lazy').then((d) => d.Route))
 
-const JsonGeneratorLazyRoute = JsonGeneratorLazyImport.update({
-  path: '/json-generator',
+const JsonLazyRoute = JsonLazyImport.update({
+  path: '/json',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/json-generator.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/json.lazy').then((d) => d.Route))
+
+const GridLazyRoute = GridLazyImport.update({
+  path: '/grid',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/grid.lazy').then((d) => d.Route))
 
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
@@ -47,8 +51,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/json-generator': {
-      preLoaderRoute: typeof JsonGeneratorLazyImport
+    '/grid': {
+      preLoaderRoute: typeof GridLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/json': {
+      preLoaderRoute: typeof JsonLazyImport
       parentRoute: typeof rootRoute
     }
     '/scrollbar': {
@@ -62,7 +70,8 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  JsonGeneratorLazyRoute,
+  GridLazyRoute,
+  JsonLazyRoute,
   ScrollbarLazyRoute,
 ])
 

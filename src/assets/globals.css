@@ -77,10 +77,11 @@
   }
 }
 
+/*-----SCROLLBAR-----*/
 * {
   --sb-track-color: #25292b;
   --sb-thumb-color: #5bb98a;
-  --sb-size: 8px;
+  --sb-size: 6px;
 }
 
 *::-webkit-scrollbar {
@@ -103,11 +104,12 @@
   }
 }
 
+/*-----USER-SELECT-----*/
 ::-moz-selection {
   /* Code for Firefox */
-  background: #2c2c2c;
+  background: #4e4e4e;
 }
 
 ::selection {
-  background: #2c2c2c;
+  background: #4e4e4e;
 }

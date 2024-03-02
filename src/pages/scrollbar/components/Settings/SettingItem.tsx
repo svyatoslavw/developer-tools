@@ -2,15 +2,16 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import React from "react"
 import { HexColorPicker } from "react-colorful"
-import { useSettings } from "../../contexts/useScrollbar"
+import { useSettings } from "../../../../lib/contexts/useSettings"
 import { useOutside } from "../../hooks/useOutside"
 
 type ISettingsItem = {
   text: string
   type: "color" | "size"
+  px?: boolean
 }
 
-const SettingItem = ({ text, type }: ISettingsItem) => {
+const SettingItem = ({ text, type, px }: ISettingsItem) => {
   const { settings, updateSetting } = useSettings()
   const [value, setValue] = React.useState<number>(settings[text] as number)
   const [color, setColor] = React.useState<string>(settings[text] as string)
@@ -46,7 +47,10 @@ const SettingItem = ({ text, type }: ISettingsItem) => {
           >
             -
           </Button>
-          <span className="w-6 text-center text-sm">{value}px</span>
+          <span className="w-6 text-center text-sm">
+            {value}
+            {px && "px"}
+          </span>
           <Button
             disabled={value === 50}
             className="h-5 w-5 p-0"

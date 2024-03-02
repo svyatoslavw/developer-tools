@@ -1,9 +1,9 @@
 import { PageContainer } from "@/components/ui/container"
 import { GeneratedCode } from "./components/GeneratedCode/GeneratedCode"
+import { GeneratorForm } from "./components/Generator/GeneratorForm"
 import { OptionsBar } from "./components/Sidebar/OptionsBar"
-import { GeneratorForm } from "./form/GeneratorForm"
 
-export default function JSONGenerator() {
+const JSON = () => {
   return (
     <PageContainer>
       <OptionsBar />
@@ -12,3 +12,4 @@ export default function JSONGenerator() {
     </PageContainer>
   )
 }
+export { JSON }

@@ -19,7 +19,7 @@ interface IAddNewItem {
 
 const AddNewItemSheet = ({ addCustomOption }: IAddNewItem) => {
   const [key, setKey] = React.useState("")
-  const [value, setValue] = React.useState<string | number>(0)
+  const [value, setValue] = React.useState<string | number | null>(null)
 
   return (
     <Sheet>
@@ -63,7 +63,7 @@ const AddNewItemSheet = ({ addCustomOption }: IAddNewItem) => {
             <Button
               type="submit"
               className="rounded bg-custom hover:bg-custom/70"
-              onClick={() => addCustomOption(key, value)}
+              onClick={() => addCustomOption(key, value || "")}
             >
               Create option
             </Button>

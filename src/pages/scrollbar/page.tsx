@@ -5,7 +5,7 @@ import { Settings } from "./components/Settings/Settings"
 const Scrollbar = () => {
   return (
     <PageContainer>
-      <div className="flex w-full justify-between">
+      <div className="flex w-2/3 justify-between">
         <Settings />
         <GeneratedCode />
       </div>

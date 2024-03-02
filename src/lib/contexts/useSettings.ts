@@ -1,6 +1,6 @@
 import { SettingsContextType } from "@/types/scrollbar.types"
 import { useContext } from "react"
-import { SettingsContext } from "./ScrollbarContext"
+import { SettingsContext } from "./SettingsContext"
 
 export const useSettings = (): SettingsContextType => {
   const context = useContext(SettingsContext)

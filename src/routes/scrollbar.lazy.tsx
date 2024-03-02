@@ -1,10 +1,10 @@
-import { SettingsProvider } from "@/pages/scrollbar/contexts/ScrollbarContext"
+import { SettingsProvider } from "@/lib/contexts/SettingsContext"
 import { Scrollbar } from "@/pages/scrollbar/page"
 import { createLazyFileRoute } from "@tanstack/react-router"
 
 export const Route = createLazyFileRoute("/scrollbar")({
   component: () => (
-    <SettingsProvider>
+    <SettingsProvider type="scroll">
       <Scrollbar />
     </SettingsProvider>
   )
