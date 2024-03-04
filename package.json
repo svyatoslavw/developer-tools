@@ -1,5 +1,12 @@
 {
-  "name": "pet-project",
+  "name": "developer-tools",
+  "author": "svyatoslavw",
+  "keywords": [
+    "react tools",
+    "css grid",
+    "css scrollbar",
+    "generate json data"
+  ],
   "private": true,
   "version": "1.0.0",
   "type": "module",
