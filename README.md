@@ -6,9 +6,12 @@
   <p>
   (Faker.js, Tanstack Router, Vite)
   </p>
+  
+  <span>
+  For Developers to help you with generating JSON data, or for creating scrollbar styles and working with grids
+  </span>
+  <a href="https://developer-tools-eight.vercel.app/">check demo</a>
 </div>
-
-## Tools for React developers to help you with generating JSON data, or for creating scrollbar styles and working with grids
 
 <table align="center">
     <tr>
