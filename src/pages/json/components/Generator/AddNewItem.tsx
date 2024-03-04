@@ -23,10 +23,15 @@ const AddNewItemSheet = ({ addCustomOption }: IAddNewItem) => {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button className="bg-custom hover:bg-custom/70">Add new option</Button>
+      <SheetTrigger className="w-1/2">
+        <button
+          className="w-full rounded-lg bg-black px-3 py-2 transition-colors hover:bg-neutral-800"
+          type="button"
+        >
+          Add new option
+        </button>
       </SheetTrigger>
-      <SheetContent className="bg-background">
+      <SheetContent className="border-neutral-900 bg-background">
         <SheetHeader>
           <SheetTitle>Adding option</SheetTitle>
           <SheetDescription>
@@ -59,9 +64,8 @@ const AddNewItemSheet = ({ addCustomOption }: IAddNewItem) => {
           </div>
         </div>
         <SheetFooter>
-          <SheetClose asChild>
+          <SheetClose>
             <Button
-              type="submit"
               className="rounded bg-custom hover:bg-custom/70"
               onClick={() => addCustomOption(key, value || "")}
             >

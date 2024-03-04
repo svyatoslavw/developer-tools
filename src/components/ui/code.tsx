@@ -26,14 +26,14 @@ const Code = React.forwardRef<HTMLPreElement, DivProps>(
           ref={ref}
           {...props}
           className={cn(
-            "max-h-[540px] min-w-[600px] overflow-y-auto rounded-s-xl bg-neutral-800/50 p-4",
+            "max-h-[540px] min-w-[600px] overflow-y-auto rounded-s-xl bg-gradient-to-t from-neutral-800/50 to-transparent p-4 shadow-2xl",
             className
           )}
         >
           <code>{code}</code>
           {styled && <style dangerouslySetInnerHTML={{ __html: code }} />}
         </pre>
-        <Button onClick={onCopy} className="w-36 bg-custom hover:bg-custom/70">
+        <Button onClick={onCopy} className="w-36 bg-custom shadow hover:bg-custom/70">
           {copied ? "✓ Copied" : "Copy"}
         </Button>
       </div>

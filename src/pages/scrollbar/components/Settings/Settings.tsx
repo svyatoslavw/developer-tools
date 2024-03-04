@@ -7,9 +7,9 @@ const Settings = () => {
         <h1 className="mb-2 text-2xl">Settings</h1>
         <SettingItem text="Thumb Color" type="color" />
         <SettingItem text="Track Color" type="color" />
-        <SettingItem text="Scrollbar Width" type="size" />
-        <SettingItem text="Scrollbar Border Radius" type="size" />
-        <SettingItem text="Thumb Border Width" type="size" />
+        <SettingItem text="Scrollbar Width" type="size" px />
+        <SettingItem text="Scrollbar Border Radius" type="size" px />
+        <SettingItem text="Thumb Border Width" type="size" px />
         <SettingItem text="Thumb Border Color" type="color" />
       </div>
     </div>

@@ -4,13 +4,41 @@
    <h1>Useful tools for React Developers</h1>
   
   <p>
-  (description)
+  (Faker.js, Tanstack Router, Vite)
   </p>
 </div>
 
-# React + TypeScript + Vite
+## Tools for React developers to help you with generating JSON data, or for creating scrollbar styles and working with grids
 
-### Installation
+<table align="center">
+    <tr>
+        <td>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="Google" width="40" height="40" /></a>
+        </td>
+                        <td>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="40" height="40" /></a>
+        </td>
+                                <td>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" width="40" height="40" /></a>
+        </td>
+                                <td>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" width="40" height="40" /></a>
+        </td>
+                                        <td>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="" width="40" height="40" /></a>
+        </td>
+    </tr>
+</table>
+
+## Screenshots
+
+<div align="center">
+  <a href="#"><img src="https://github.com/svyatoslavw/developer-tools/blob/main/public/1.png" alt="screenshot1" /></a><br>
+  <a href="#"><img src="https://github.com/svyatoslavw/developer-tools/blob/main/public/2.png" alt="screenshot2" /></a><br>
+  <a href="#"><img src="https://github.com/svyatoslavw/developer-tools/blob/main/public/3.png" alt="screenshot2" /></a><br>
+</div>
+
+## Installation
 
 Clone the project
 
@@ -24,7 +52,7 @@ cd developer-tools
 
 <!-- Run Locally -->
 
-### Run Locally
+## Run Locally
 
 Install dependencies
 

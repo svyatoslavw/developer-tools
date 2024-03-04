@@ -35,12 +35,18 @@ export const generateInitialOptions = () => {
     name: faker.person.fullName(),
     city: faker.location.city(),
     country: faker.location.country(),
-    image: faker.image.url(),
     phone: faker.phone.number(),
     number: faker.number.int({ min: 100, max: 99999 }),
     price: faker.commerce.price({ min: 0, max: 100000, dec: 0, symbol: "$" }),
     product: faker.commerce.product(),
-    date: faker.date.anytime().toISOString()
+    date: faker.date.anytime().toISOString(),
+    noun: faker.hacker.noun(),
+    color: faker.internet.color(),
+    song: faker.music.songName(),
+    genre: faker.music.genre(),
+    image: faker.image.url(),
+    file: faker.system.commonFileExt(),
+    car: faker.vehicle.manufacturer()
   }
 }
 

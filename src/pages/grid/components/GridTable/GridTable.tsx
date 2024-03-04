@@ -48,7 +48,7 @@ const GridTable = () => {
   return (
     <div className="flex flex-col space-y-5">
       <div
-        className="parent grid h-[300px] min-w-[533px] border border-custom p-2"
+        className="parent grid h-[300px] min-w-[533px] border border-custom/80 p-1"
         onMouseUp={posMouseUp}
       >
         <style dangerouslySetInnerHTML={{ __html: code }} />
@@ -64,7 +64,7 @@ const GridTable = () => {
           ></div>
         ))}
       </div>
-      <div className="parent grid h-[300px] min-w-[533px] border border-neutral-600 p-2">
+      <div className="parent grid h-[300px] min-w-[533px] border border-neutral-700 p-1">
         <style dangerouslySetInnerHTML={{ __html: code }} />
         <div className="h-full w-full bg-black" style={calculateGridArea()}></div>
         {Array.from({ length: +settings["Columns"] * +settings["Rows"] }).map((_, index) => (

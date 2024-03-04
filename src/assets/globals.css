@@ -113,3 +113,8 @@
 ::selection {
   background: #4e4e4e;
 }
+
+body {
+  background: linear-gradient(to bottom, rgb(var(--background)), rgb(var(--background)))
+    rgb(var(--background));
+}

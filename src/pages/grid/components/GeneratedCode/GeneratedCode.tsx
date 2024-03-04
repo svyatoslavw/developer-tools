@@ -17,7 +17,7 @@ const GeneratedCode = () => {
     )
   }, [settings, setCode])
 
-  return <Code code={code} className="h-[340px] w-[600px]" />
+  return <Code code={code} className="h-[340px] w-[600px] rounded-xl" />
 }
 
 export { GeneratedCode }

@@ -1,6 +1,6 @@
 import { SpinnerIcon } from "@/components/icons/SpinnerIcon"
-import { Button } from "@/components/ui/button"
 import { AddNewItemSheet } from "./AddNewItem"
+import { RemoveItems } from "./RemoveItems"
 
 interface IButtonBlock {
   isLoading: boolean
@@ -8,12 +8,19 @@ interface IButtonBlock {
 }
 const ButtonBlock = ({ addCustomOption, isLoading }: IButtonBlock) => {
   return (
-    <div className="flex space-x-5">
-      <Button disabled={isLoading} type="submit">
+    <div className="flex flex-col space-y-3">
+      <button
+        disabled={isLoading}
+        type="submit"
+        className="rounded-lg bg-white px-3 py-1 text-black transition-colors hover:bg-white/70"
+      >
         {isLoading && <SpinnerIcon />}
         Generate
-      </Button>
-      <AddNewItemSheet addCustomOption={addCustomOption} />
+      </button>
+      <div className="flex w-full gap-5">
+        <AddNewItemSheet addCustomOption={addCustomOption} />
+        <RemoveItems />
+      </div>
     </div>
   )
 }

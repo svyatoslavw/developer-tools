@@ -12,7 +12,7 @@ interface IGeneratorItem {
 
 const GeneratorItem = ({ form, items, options }: IGeneratorItem) => {
   return (
-    <div className="flex flex-wrap px-1">
+    <div className="flex max-h-44 flex-wrap overflow-y-auto px-1">
       {items.map((item) => (
         <div key={item.label} className="w-1/3">
           <Controller

@@ -1,14 +1,18 @@
 export const links = [
   {
-    label: "JSON Generator",
+    label: "Home",
+    href: "/"
+  },
+  {
+    label: "JSON",
     href: "/json"
   },
   {
-    label: "Scrollbar Generator",
+    label: "Scrollbar",
     href: "/scrollbar"
   },
   {
-    label: "Grid Generator",
+    label: "Grid",
     href: "/grid"
   }
 ]
